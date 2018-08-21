@@ -1,0 +1,15 @@
+{
+  "name": "makefile-static-site-generator",
+  "version": "0.0.1",
+  "description": "Node dependencies for Makefile-based static site generator.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "davep3rrett <david.m.perrett@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "ejs-cli": "^2.0.1",
+    "markdown": "^0.5.0"
+  }
+}

@@ -6,11 +6,21 @@ FINISHED_POSTS := $(patsubst ./tmp/%.html.part,./dist/posts/%.html, $(COMPILED_M
 
 all: $(FINISHED_POSTS)
 
-./dist/posts/%.html: ./tmp/%.html.part
+./dist/posts/%.html: ./tmp/%.html.part ./tmp/header.html ./tmp/footer.html
 	mkdir -p dist/posts
-	cat $(ejs ./src/layout/head.ejs) $< $(ejs ./src/layout/footer.ejs) > $@
+	cat ./tmp/header.html $< ./tmp/footer.html > $@
 
 ./tmp/%.html.part: ./src/posts/%.md
 	mkdir -p tmp
-	md2html $< > $@
+	node ./build/marked-helper.js $< > $@
+
+# The header and footer recipes are currently identical but I can envision them having different requirements in the future
+
+./tmp/header.html: ./src/layout/header.ejs
+	mkdir -p tmp
+	ejs-cli $< > $@
+
+./tmp/footer.html: ./src/layout/footer.ejs
+	mkdir -p tmp
+	ejs-cli $< > $@
 

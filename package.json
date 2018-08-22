@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "ejs-cli": "^2.0.1",
-    "markdown": "^0.5.0"
+    "markdown": "^0.5.0",
+    "marked": "^0.5.0"
   }
 }

@@ -9,6 +9,7 @@
   "author": "davep3rrett <david.m.perrett@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.6.1",
     "ejs-cli": "^2.0.1",
     "markdown": "^0.5.0",
     "marked": "^0.5.0"

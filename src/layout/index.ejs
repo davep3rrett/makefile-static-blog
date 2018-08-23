@@ -1,0 +1,12 @@
+<%- include('header.ejs'); %>
+
+<ul>
+<% files.forEach((file) => { %>
+  <li>
+    <a href="posts/<%= file %>"><%= file %></a>
+  </li>
+<% }); %>
+</ul>
+
+<%-include('footer.ejs'); %>
+

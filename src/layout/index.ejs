@@ -1,8 +1,10 @@
 <%- include('header.ejs'); %>
 
-<ul>
+<p class="bio">Dave Perrett is a developer and musician living in Brooklyn, NY.</p>
+
+<ul class="posts-list">
 <% files.forEach((file) => { %>
-  <li>
+  <li class="posts-list__item">
     <a href="posts/<%= file %>"><%= file %></a>
   </li>
 <% }); %>

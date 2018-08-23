@@ -1,0 +1,31 @@
+$soft-black: #1a1c1a;
+$lavender: #c9a5e5;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+a:link,
+a:visited,
+a:active,
+a:hover {
+	color: $soft-black;
+}
+
+a {
+//	text-decoration: none;
+}
+
+header,
+footer {
+	background-color: $lavender;
+}
+
+.main-content {
+	max-width: 900px;
+}
+

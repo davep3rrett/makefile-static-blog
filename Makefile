@@ -12,9 +12,10 @@ all: ./dist/index.html ./dist/main.css
 ./dist/main.css: ./src/styles/main.scss
 	sass $< $@
 
-./dist/posts/%.html: ./tmp/%.html.part ./tmp/header.html ./tmp/footer.html
+./dist/posts/%.html: ./tmp/%.html.part
 	mkdir -p dist/posts
-	cat ./tmp/header.html $< ./tmp/footer.html > $@
+	# cat ./tmp/header.html $< ./tmp/footer.html > $@
+	node ./build/ejs-helper.js ./src/templates/post.ejs '{"relativeCssPathPrefix": "../", "compiledMarkdownFile": "$(value <)"}' > ./dist/posts/%.html
 
 ./tmp/%.html.part: ./src/posts/%.md
 	mkdir -p tmp
@@ -22,13 +23,13 @@ all: ./dist/index.html ./dist/main.css
 
 # The header and footer recipes are currently identical but I can envision them having different requirements in the future
 
-./tmp/header.html: ./src/layout/header.ejs
-	mkdir -p tmp
-	ejs-cli $< > $@
-
-./tmp/footer.html: ./src/layout/footer.ejs
-	mkdir -p tmp
-	ejs-cli $< > $@
+#./tmp/header.html: ./src/layout/header.ejs
+#	mkdir -p tmp
+#	ejs-cli $< > $@
+#
+#./tmp/footer.html: ./src/layout/footer.ejs
+#	mkdir -p tmp
+#	ejs-cli $< > $@
 
 clean:
 	rm -rf tmp dist

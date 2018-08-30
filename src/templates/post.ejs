@@ -1,6 +1,6 @@
-<% include('partials/header'); %>
+<%- include('partials/header', {relativeCssPathPrefix: relativeCssPathPrefix}); %>
 
-<% include(compiledMarkdownFile) %>
+<%- include(compiledMarkdownFile) %>
 
-<% include('partials/footer') %>
+<%- include('partials/footer') %>
 

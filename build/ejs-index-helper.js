@@ -7,7 +7,7 @@ fs.readdir(pathToScan, 'utf8', (err, files) => {
     console.error(err);
     process.exit(1);
   }
-  ejs.renderFile('src/layout/index.ejs', {files: files}, {}, (err, html) => {
+  ejs.renderFile('src/templates/index.ejs', {files: files, relativeCssPathPrefix: ''}, {}, (err, html) => {
     if (err) {
       console.error(err);
       process.exit(1);

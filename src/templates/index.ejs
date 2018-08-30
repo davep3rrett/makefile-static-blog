@@ -1,4 +1,4 @@
-<%- include('header.ejs'); %>
+<%- include('partials/header.ejs', {relativeCssPathPrefix: relativeCssPathPrefix}); %>
 
 <p class="bio">Dave Perrett is a developer and musician living in Brooklyn, NY.</p>
 
@@ -10,5 +10,5 @@
 <% }); %>
 </ul>
 
-<%-include('footer.ejs'); %>
+<%-include('partials/footer.ejs'); %>
 

@@ -11,7 +11,17 @@ Make sure to have these installed on your system:
 
 ## Build the blog
 
-`npm i`
-`make` (or `make clean && make` on subsequent builds)
+First build:
+
+```
+npm i
+make
+```
+
+Subsequent builds:
+
+```
+make clean && make
+```
 
 The generated site files will appear in `/dist`.

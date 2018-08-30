@@ -1,7 +1,7 @@
 $soft-black: #1a1c1a;
 $lavender: #c9a5e5;
 $hacker-green: #77e594;
-$code-bg: #5d5d5d;
+$code-bg: #3d3d3d;
 
 h1,
 h2,
@@ -10,13 +10,21 @@ h4,
 h5,
 h6,
 p,
+li {
+  color: $lavender;
+}
+
 a,
 a:link,
 a:visited,
 a:active,
-a:hover,
-li {
-  color: $lavender;
+a:hover {
+  color: $hacker-green;
+}
+
+p {
+  line-height: 1.375em;
+  margin-bottom: 1.5em;
 }
 
 hr {
@@ -56,6 +64,7 @@ pre {
 }
 
 code {
+  font-size: 0.75em;
   margin: 0 0.125em;
   padding: 0.125em 0.25em;
   color: $hacker-green;

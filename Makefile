@@ -12,13 +12,13 @@ all: ./dist/index.html ./dist/main.css
 ./dist/main.css: ./src/styles/main.scss
 	sass $< $@
 
-$(FINISHED_POSTS): $(COMPILED_MD_PARTIALS)
+./dist/posts/%.html: ./tmp/%.html.part
 	mkdir -p dist/posts
 	node ./build/ejs-helper.js ./src/templates/post.ejs '{"relativeCssPathPrefix": "../", "compiledMarkdownFile": "$(shell pwd)/$(value <)"}' > $@
 
-$(COMPILED_MD_PARTIALS): $(MD_FILES)
+./tmp/%.html.part: ./src/posts/%.md
 	mkdir -p tmp
-	node ./build/marked-helper.js $< > $@
+	node ./build/marked-helper.js  $< > $@
 
 clean:
 	rm -rf tmp dist

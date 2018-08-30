@@ -4,13 +4,16 @@ MD_FILES := $(wildcard ./src/posts/*.md)
 COMPILED_MD_PARTIALS := $(patsubst ./src/posts/%.md,./tmp/%.html.part,$(MD_FILES))
 FINISHED_POSTS := $(patsubst ./tmp/%.html.part,./dist/posts/%.html, $(COMPILED_MD_PARTIALS))
 
-all: ./dist/index.html ./dist/main.css
+all: ./dist/index.html ./dist/main.min.css
 
 ./dist/index.html: $(FINISHED_POSTS)
 	node ./build/ejs-index-helper.js dist/posts > ./dist/index.html
 
-./dist/main.css: ./src/styles/main.scss
-	sass $< $@
+./dist/main.min.css: ./tmp/main.css
+	csso $< > $@
+
+./tmp/main.css: ./src/styles/main.scss
+	sass --sourcemap=none $< $@
 
 ./dist/posts/%.html: ./tmp/%.html.part
 	mkdir -p dist/posts

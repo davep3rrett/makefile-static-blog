@@ -15,7 +15,7 @@ all: ./dist/index.html ./dist/main.css
 ./dist/posts/%.html: ./tmp/%.html.part
 	mkdir -p dist/posts
 	# cat ./tmp/header.html $< ./tmp/footer.html > $@
-	node ./build/ejs-helper.js ./src/templates/post.ejs '{"relativeCssPathPrefix": "../", "compiledMarkdownFile": "$(value <)"}' > ./dist/posts/%.html
+	node ./build/ejs-helper.js ./src/templates/post.ejs '{"relativeCssPathPrefix": "../", "compiledMarkdownFile": "$(shell pwd)/$(value <)"}' > ./dist/posts/%.html
 
 ./tmp/%.html.part: ./src/posts/%.md
 	mkdir -p tmp

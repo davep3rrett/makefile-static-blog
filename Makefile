@@ -14,7 +14,7 @@ all: ./dist/index.html ./dist/main.css
 
 ./dist/posts/%.html: ./tmp/%.html.part
 	mkdir -p dist/posts
-	node ./build/ejs-helper.js ./src/templates/post.ejs '{"relativeCssPathPrefix": "../", "compiledMarkdownFile": "$(shell pwd)/$(value <)"}' > $@
+	node ./build/ejs-helper.js ./src/templates/post.ejs '{"pathPrefix": "../", "compiledMarkdownFile": "$(shell pwd)/$(value <)"}' > $@
 
 ./tmp/%.html.part: ./src/posts/%.md
 	mkdir -p tmp

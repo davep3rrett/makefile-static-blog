@@ -7,7 +7,7 @@ if(process.argv[2]) {
   template = process.argv[2].toString();
 }
 else {
-  process.exit(-1);
+  process.exit(1);
 }
 
 if(process.argv[3]) {
@@ -20,7 +20,7 @@ else {
 ejs.renderFile(template, templateData, {}, (err, html) => {
   if (err) {
     console.error(err);
-    process.exit(-1);
+    process.exit(1);
   }
   console.log(html);
 });

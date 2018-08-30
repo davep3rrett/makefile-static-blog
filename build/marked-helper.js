@@ -9,6 +9,10 @@ marked.setOptions({
 });
 
 fs.readFile(inputFile, 'utf8', (err, data) => {
+  if (err) {
+    console.error(err);
+    process.exit(1);
+  }
   console.log( marked(data) );
 });
 

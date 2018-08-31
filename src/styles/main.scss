@@ -3,6 +3,8 @@ $lavender: #c9a5e5;
 $hacker-green: #77e594;
 $code-bg: #3d3d3d;
 
+$content-max-width: 700px;
+
 h1,
 h2,
 h3,
@@ -45,17 +47,46 @@ footer {
 }
 
 header,
+footer {
+  text-align: center;
+}
+
+header,
 footer,
 .main-content {
   padding: 0 1.5em;
 }
 
-ul {
-  list-style-type: none;
+
+.main-content {
+  max-width: $content-max-width;
+  margin: 0 auto;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
 }
 
-li {
-  margin-bottom: 0.5em;
+ul {
+  padding: 0;
+  list-style-position: inside;
+}
+
+.bio,
+.posts-list {
+  text-align: center;
+}
+
+.posts-list {
+  list-style-type: none;
+  li {
+    margin-bottom: 0.5em;
+}
 }
 
 pre {

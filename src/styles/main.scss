@@ -3,6 +3,8 @@ $lavender: #c9a5e5;
 $hacker-green: #77e594;
 $code-bg: #3d3d3d;
 
+$content-max-width: 700px;
+
 h1,
 h2,
 h3,
@@ -12,6 +14,14 @@ h6,
 p,
 li {
   color: $lavender;
+}
+
+h1 {
+  font-size: 1.75em;
+
+  @media (min-width: 415px) {
+    font-size: 2em;
+  }
 }
 
 a,
@@ -45,22 +55,55 @@ footer {
 }
 
 header,
+footer {
+  text-align: center;
+}
+
+header,
 footer,
 .main-content {
   padding: 0 1.5em;
 }
 
-ul {
-  list-style-type: none;
+
+.main-content {
+  max-width: $content-max-width;
+  margin: 0 auto;
+  overflow-x: hidden;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-align: center;
+  }
 }
 
-li {
-  margin-bottom: 0.5em;
+ul {
+  padding: 0;
+  list-style-position: inside;
+}
+
+.bio,
+.posts-list {
+  text-align: center;
+}
+
+.posts-list {
+  list-style-type: none;
+  li {
+    margin-bottom: 0.5em;
+  }
 }
 
 pre {
   padding: 1em;
   background-color: $code-bg;
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
 }
 
 code {
@@ -74,4 +117,10 @@ code {
 table {
   color: $hacker-green;
   background-color: $code-bg;
+
+  td,
+  th {
+    border: 1px solid $lavender;
+    padding: 0.5em;
+  }
 }

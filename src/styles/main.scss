@@ -16,6 +16,14 @@ li {
   color: $lavender;
 }
 
+h1 {
+  font-size: 1.75em;
+
+  @media (min-width: 415px) {
+    font-size: 2em;
+  }
+}
+
 a,
 a:link,
 a:visited,
@@ -61,6 +69,7 @@ footer,
 .main-content {
   max-width: $content-max-width;
   margin: 0 auto;
+  overflow-x: hidden;
 
   h1,
   h2,
@@ -86,12 +95,15 @@ ul {
   list-style-type: none;
   li {
     margin-bottom: 0.5em;
-}
+  }
 }
 
 pre {
   padding: 1em;
   background-color: $code-bg;
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
 }
 
 code {
@@ -105,4 +117,10 @@ code {
 table {
   color: $hacker-green;
   background-color: $code-bg;
+
+  td,
+  th {
+    border: 1px solid $lavender;
+    padding: 0.5em;
+  }
 }

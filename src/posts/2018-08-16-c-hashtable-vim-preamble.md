@@ -1,3 +1,7 @@
+---
+title: Preamble / Ramble on Learning Vim, Learning C, and Implementing a Hashmap for Self Edification and Mind Expansion
+date: 2018-08-16
+---
 ## Preamble / Ramble on Learning Vim, Learning C, and Implementing a Hashmap for Self Edification and Mind Expansion
 
 Hello and welcome to my first programming blog post in more than two years! After a year of doing lots of front end web development work, my itch to do computer science-y, Unix greybeard-y things has intensified.

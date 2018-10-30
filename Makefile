@@ -7,7 +7,7 @@ FINISHED_POSTS := $(patsubst ./tmp/%.html.part,./dist/posts/%.html, $(COMPILED_M
 all: ./dist/index.html ./dist/main.min.css
 
 ./dist/index.html: $(FINISHED_POSTS)
-	node ./build/ejs-index-helper.js dist/posts > ./dist/index.html
+	node ./build/ejs-index-helper.js src/posts > ./dist/index.html
 
 ./dist/main.min.css: ./tmp/main.css
 	csso $< > $@
@@ -19,9 +19,13 @@ all: ./dist/index.html ./dist/main.min.css
 	mkdir -p dist/posts
 	node ./build/ejs-helper.js ./src/templates/post.ejs '{"pathPrefix": "../", "compiledMarkdownFile": "$(shell pwd)/$(value <)"}' > $@
 
-./tmp/%.html.part: ./src/posts/%.md
+./tmp/%.html.part: ./src/posts/%.md ./tmp/%.frontmatter
 	mkdir -p tmp
 	node ./build/marked-helper.js  $< > $@
+
+./tmp/%.frontmatter: ./src/posts/%.md
+	mkdir -p tmp
+	node ./build/gray-matter-helper.js $< > $@
 
 clean:
 	rm -rf tmp dist

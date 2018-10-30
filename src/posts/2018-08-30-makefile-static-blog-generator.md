@@ -1,3 +1,7 @@
+---
+title: A Makefile-based static site generator
+date: 2018-10-29
+---
 ## A Makefile-Based Static Site Generator
 
 After I wrote [the last post](2018-08-16-c-hashtable-vim-preamble.html), I started feeling dissatisfied with my current static blog setup. Jekyll is a super cool project, no hate! But I started getting that itchy feeling I sometimes get as a result of not having made the thing I'm working on completely from scratch &#x1F643;

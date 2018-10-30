@@ -10,7 +10,7 @@ In keeping with my recent Unix greybeard urges, I decided to use [GNU Make](http
 
 I learned a lot about Make in the process, and there's a lot I could cover in this post, but I'm not going to bore you by attempting to write a Make tutorial. For me, the big takeaway - the big mind-blower for me - was the declarative style.
 
-_~ Declarative, not imperative ~_.
+_~ Declarative, not imperative ~_
 
 This means that rather than laying out the build steps one by one in your Makefile, you instead tell Make what you ultimately want to end up with, give it some hints about how to build the intermediate dependencies of the end result, and Make just...does it. Crazy.
 

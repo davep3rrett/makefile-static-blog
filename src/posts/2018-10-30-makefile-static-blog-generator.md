@@ -26,6 +26,10 @@ To deal with metadata, I decided to keep Jekyll's solution and use YAML front ma
 
 I wanted Make to be doing most of the work, so I needed to write wrapper scripts around the aforementioned `npm` packages to be able to use them from the shell. I tried to make these helper scripts as 'dumb' / Unix-y as possible (only do one thing, write to the stdout, yadda yadda).
 
+For styling, I used [Sass](http://sass-lang.com/) and I used [csso](https://github.com/css/csso) as a minifier / optimizer.
+
+And lastly, I'm proud to report there is absolutely zero client-side Javascript running on this blog!!! &#x1F60E;
+
 ### Assorted takeaways from writing my first real Makefile
 
  - This line at the top of your Makefile allows you to invoke CLIs / executables from `node_modules`:

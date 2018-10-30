@@ -5,7 +5,7 @@
 <ul class="posts-list">
 <% files.forEach((file) => { %>
   <li class="posts-list__item">
-    <a href="posts/<%= file %>"><%= file %></a>
+    <a href="posts/<%= file.data.filename %>"><%= file.data.title %></a> &#1421; <%= file.data.date.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %>
   </li>
 <% }); %>
 </ul>

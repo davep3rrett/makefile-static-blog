@@ -13,15 +13,20 @@ all: ./dist/index.html ./dist/main.min.css
 	csso $< > $@
 
 ./tmp/main.css: ./src/styles/main.scss
+	mkdir -p tmp
 	sass --sourcemap=none $< $@
 
 ./dist/posts/%.html: ./tmp/%.html.part
 	mkdir -p dist/posts
 	node ./build/ejs-helper.js ./src/templates/post.ejs '{"pathPrefix": "../", "compiledMarkdownFile": "$(shell pwd)/$(value <)"}' > $@
 
-./tmp/%.html.part: ./src/posts/%.md ./tmp/%.frontmatter
+./tmp/%.html.part: ./tmp/%.md
 	mkdir -p tmp
 	node ./build/marked-helper.js  $< > $@
+
+./tmp/%.md: ./src/posts/%.md
+	mkdir -p tmp
+	node ./build/gray-matter-helper.js -c $< > $@
 
 ./tmp/%.frontmatter: ./src/posts/%.md
 	mkdir -p tmp

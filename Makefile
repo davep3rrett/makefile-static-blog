@@ -26,11 +26,7 @@ all: ./dist/index.html ./dist/main.min.css
 
 ./tmp/%.md: ./src/posts/%.md
 	mkdir -p tmp
-	node ./build/gray-matter-helper.js -c $< > $@
-
-./tmp/%.frontmatter: ./src/posts/%.md
-	mkdir -p tmp
-	node ./build/gray-matter-helper.js $< > $@
+	node ./build/strip-frontmatter.js $< > $@
 
 clean:
 	rm -rf tmp dist

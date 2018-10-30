@@ -1,6 +1,6 @@
 ---
 title: Preamble / Ramble on Learning Vim, Learning C, and Implementing a Hashmap for Self Edification and Mind Expansion
-date: 2018-08-16
+date: 16 Aug 2018 12:00:00 EST
 ---
 ## Preamble / Ramble on Learning Vim, Learning C, and Implementing a Hashmap for Self Edification and Mind Expansion
 

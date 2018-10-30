@@ -1,6 +1,6 @@
 ---
 title: A Makefile-based static site generator
-date: 2018-10-29
+date: 30 Oct 2018 00:17:00 EST
 ---
 ## A Makefile-Based Static Site Generator
 

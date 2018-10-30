@@ -3,9 +3,11 @@
 <p class="bio">Dave Perrett is a developer and musician living in Brooklyn, NY.</p>
 
 <ul class="posts-list">
+<% let date; %>
 <% files.forEach((file) => { %>
+  <% date = new Date(file.data.date); %>
   <li class="posts-list__item">
-    <a href="posts/<%= file.data.filename %>"><%= file.data.title %></a> &#1421; <%= file.data.date.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %>
+    <a href="posts/<%= file.data.filename %>"><%= file.data.title %></a> &#1421; <%= date.toLocaleDateString('en-US', {year: 'numeric', month: 'long', day: 'numeric'}) %>
   </li>
 <% }); %>
 </ul>

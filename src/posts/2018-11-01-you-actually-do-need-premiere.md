@@ -3,7 +3,7 @@ title: You actually do need Premiere
 date: 01 Nov 2018 00:47:15 EST
 ---
 
-# You actually do need Premiere
+## You actually do need Premiere
 
 I just wanted to write a quick note refuting [my post](2016-05-31-ffmpeg.html) from two and a half years ago. Unfortunately, you really do need proprietary, non-free software to do any kind of less-than-trivial video editing. :~{
 

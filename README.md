@@ -10,8 +10,10 @@ Make sure to have these installed on your system:
 
  - GNU Make
  - NodeJS
- - Ruby
- - Sass
+
+## If you want to use Sass
+
+The Makefile has a `USE_SASS` flag. Set it to `1` and call your main stylesheet `main.scss`. Otherwise to use regular CSS and skip the compilation step, set it to `0` (or anything else, or comment it out, or whatever) and call your main stylesheet `main.css`.
 
 ## Build the blog
 

@@ -1,4 +1,13 @@
+# be able to directly call executables installed by npm
 PATH := node_modules/.bin:$(PATH)
+
+USE_SASS := 1
+
+# make sure your stylesheet is named one of these
+STYLESHEET_NAME := main.css
+ifeq ($(USE_SASS), 1)
+	STYLESHEET_NAME := main.scss
+endif
 
 MD_FILES := $(wildcard ./src/posts/*.md)
 COMPILED_MD_PARTIALS := $(patsubst ./src/posts/%.md,./tmp/%.html.part,$(MD_FILES))
@@ -16,9 +25,13 @@ all: ./dist/index.html ./dist/main.min.css ./dist/favicon.ico
 	mkdir -p dist
 	cp ./src/favicon.ico ./dist/favicon.ico
 
-./tmp/main.css: ./src/styles/main.scss
+./tmp/main.css: ./src/styles/$(STYLESHEET_NAME)
 	mkdir -p tmp
-	sass --sourcemap=none $< $@
+ifeq ($(USE_SASS), 1)
+	node ./build/node-sass-helper.js $< > $@
+else
+	cp $< $@
+endif
 
 ./dist/posts/%.html: ./tmp/%.html.part
 	mkdir -p dist/posts
@@ -34,4 +47,3 @@ all: ./dist/index.html ./dist/main.min.css ./dist/favicon.ico
 
 clean:
 	rm -rf tmp dist
-

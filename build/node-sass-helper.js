@@ -1,5 +1,4 @@
 const sass = require('node-sass');
-const fs = require('fs');
 const inputFile = process.argv[2];
 
 sass.render({

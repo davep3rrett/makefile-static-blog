@@ -2,6 +2,7 @@ $soft-black: #1a1c1a;
 $lavender: #c9a5e5;
 $hacker-green: #77e594;
 $code-bg: #3d3d3d;
+$chill-blue: #0c6291;
 
 $content-max-width: 700px;
 
@@ -125,3 +126,12 @@ table {
     padding: 0.5em;
   }
 }
+
+blockquote {
+  font-style: italic;
+
+  p {
+    color: $chill-blue;
+  }
+}
+

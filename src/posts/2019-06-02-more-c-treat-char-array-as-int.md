@@ -5,7 +5,7 @@ date: 02 Jun 2019 14:41 EST
 
 ## More C: Treating an array of chars as an int
 
-In Exercise 9 (Arrays & Strings) of [Learn C The Hard Way](https://learncodethehardway.org/c/) Zed poses a cool extra credit question:
+In Exercise 11 (Arrays & Strings) of [Learn C The Hard Way](https://learncodethehardway.org/c/) Zed poses a cool extra credit question:
 
 > If an array of characters is 4 bytes long, and an int is 4 bytes long, then can you treat the whole `name` array like it's just an integer? How might you accomplish this crazy hack?
 
@@ -15,7 +15,7 @@ This first attempt compiled, but the result of `printf()` was different each tim
 
 I decided to search the question, and [this SO answer](https://stackoverflow.com/questions/23001591/treating-a-character-array-as-an-integer-learn-c-the-hard-way-extra-credit) showed me the crucial step I was missing: use an integer pointer to point to the memory address of the character array.
 
-I haven't gotten to the pointers chapter in LCTHW yet, and I do remember pointers a little bit from my first couple semesters doing C++ at Brooklyn College, but it's been a while.
+I haven't gotten to the pointers chapter in LCTHW yet, and although I do remember pointers a little bit from my first couple semesters doing C++ at Brooklyn College, it's been a while.
 
 So I reworked my original attempt and came up with the below code. (I did make a test program that printed out the result of `sizeof (int)` and confirmed that `int`s are 4 bytes on my system, but I decided to use `uint32_t` in my code anyway, to be explicit about the need for 4 bytes and to make my code more portable).
 
